@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Flores — Portafolio Profesional</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">RF</div>
+    <div class="nav-links">
+        <a href="#hero">Inicio</a>
+        <a href="#sobreMi">Sobre mí</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="recorrido.html">Recorrido</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+    <button class="botonTema" id="botonTema" onclick="cambiarTema()">☀️ Modo claro</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+    <div>
+        <span class="tagline">Ingeniería & Docencia Universitaria</span>
+        <h1>Ricardo <span>Flores</span></h1>
+        <p>Profesor de Análisis Matemático en UTN San Francisco. +30 años formando ingenieros.</p>
+
+        <div class="hero-actions">
+            <a href="#proyectos" class="btn-main">Ver proyectos</a>
+            <a href="#contacto" class="btn-sub">Contacto</a>
+        </div>
+    </div>
+</section>
+
+<!-- SOBRE MI -->
+<section id="sobreMi">
+    <h2>Sobre mí</h2>
+    <div class="linea"></div>
+
+    <div class="sobreMiGrid">
+        <div class="sobreMiFoto">
+            <img src="img/foto.jfif" alt="Profesor">
+        </div>
+
+        <div>
+            <p>Profesor en la <strong>UTN San Francisco</strong>, con amplia experiencia en desarrollo de software y educación universitaria.</p>
+            <p>Trabajé en empresas como <strong>Mercado Libre</strong> y <strong>Personal</strong>, combinando ingeniería y enseñanza.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="linea"></div>
+
+    <div class="habilidadesGrid">
+        <div class="habilidad">C / Java / Python</div>
+        <div class="habilidad">HTML / CSS / JS</div>
+        <div class="habilidad">Análisis Matemático</div>
+        <div class="habilidad">Docencia</div>
+    </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="linea"></div>
+
+    <div class="proyectosGrid">
+
+        <article class="proyecto">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="">
+            <h3>Gestión Académica</h3>
+            <p>Sistema para administrar instituciones educativas.</p>
+        </article>
+
+        <article class="proyecto">
+            <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d" alt="">
+            <h3>Simulador Matemático</h3>
+            <p>Herramienta interactiva para enseñanza universitaria.</p>
+        </article>
+
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+    <h2>Contacto</h2>
+    <div class="linea"></div>
+
+    <form action="https://formspree.io/f/xnjoqdby" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>Ricardo Flores — Ing. en Sistemas</p>
+    <a href="#">GitHub</a> |
+    <a href="#">LinkedIn</a>
+</footer>
+
+<script>
+let boton = document.getElementById("botonTema");
+
+if (localStorage.getItem("tema") === "claro") {
+    document.body.classList.add("claro");
+    boton.textContent = "🌙 Modo oscuro";
+}
+
+function cambiarTema() {
+    document.body.classList.toggle("claro");
+    let claro = document.body.classList.contains("claro");
+
+    boton.textContent = claro ? "🌙 Modo oscuro" : "☀️ Modo claro";
+    localStorage.setItem("tema", claro ? "claro" : "oscuro");
+}
+</script>
+
+</body>
+</html>
