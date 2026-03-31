@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido — Ricardo Flores</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/recorrido.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">RF</div>
+
+    <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#sobreMi">Sobre mí</a>
+        <a href="recorrido.html" class="activo">Recorrido</a>
+        <a href="index.html#contacto">Contacto</a>
+    </div>
+
+    <button class="botonTema" id="botonTema" onclick="cambiarTema()">☀️ Modo claro</button>
+</nav>
+
+<main class="contenedor">
+
+    <header class="header-recorrido">
+        <h1>Mi <span>Recorrido</span></h1>
+        <p>Más de 30 años combinando ingeniería, software y educación universitaria.</p>
+    </header>
+
+    <section class="timeline">
+
+        <div class="item">
+            <div class="fecha">2010 - Actualidad</div>
+            <div class="contenido">
+                <h3>Profesor UTN</h3>
+                <p>Docente de Análisis Matemático I y II, formando ingenieros.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="fecha">2005 - 2010</div>
+            <div class="contenido">
+                <h3>Senior Software Engineer</h3>
+                <p>Desarrollo de sistemas y optimización en empresas tecnológicas.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="fecha">1995 - 2005</div>
+            <div class="contenido">
+                <h3>Analista de Sistemas</h3>
+                <p>Implementación de soluciones para gestión administrativa.</p>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Ricardo Flores — Ing. en Sistemas</p>
+</footer>
+
+<script>
+let boton = document.getElementById("botonTema");
+
+if (localStorage.getItem("tema") === "claro") {
+    document.body.classList.add("claro");
+    boton.textContent = "🌙 Modo oscuro";
+}
+
+function cambiarTema() {
+    document.body.classList.toggle("claro");
+    let claro = document.body.classList.contains("claro");
+
+    boton.textContent = claro ? "🌙 Modo oscuro" : "☀️ Modo claro";
+    localStorage.setItem("tema", claro ? "claro" : "oscuro");
+}
+</script>
+
+</body>
+</html>
