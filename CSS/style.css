@@ -1,0 +1,177 @@
+:root {
+    --bg: #0d1a15;
+    --bg-alt: #16261f;
+    --text: #e0e7e1;
+    --accent: #d4af37;
+    --muted: #8ba094;
+    --border: #243b31;
+
+    --font-head: 'Playfair Display', serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+body.claro {
+    --bg: #fdfaf6;
+    --text: #1a2421;
+    --bg-alt: #f2eee8;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column; /* 🔥 CLAVE */
+    justify-content: center; /* centra vertical */
+    align-items: flex-start; /* alinea a la izquierda */
+    gap: 20px; /* separa texto y botones */
+    padding: 0 10%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+    background-size: cover;
+}
+.hero > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.hero h1 {
+    font-size: 4rem;
+    font-family: var(--font-head);
+}
+
+.hero span {
+    color: var(--accent);
+}
+
+.btn-main {
+    background: var(--accent);
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* SECCIONES */
+section {
+    padding: 60px 10%;
+}
+
+.linea {
+    width: 50px;
+    height: 3px;
+    background: var(--accent);
+    margin: 10px 0;
+}
+
+/* SOBRE MI */
+.sobreMiGrid {
+    display: flex;
+    gap: 30px;
+}
+
+.sobreMiFoto img {
+    width: 250px;
+}
+
+/* HABILIDADES */
+.habilidadesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.habilidad {
+    padding: 20px;
+    border: 1px solid var(--border);
+}
+
+/* PROYECTOS */
+.proyectosGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.proyecto img {
+    width: 100%;
+}
+
+.proyecto {
+    border: 1px solid var(--border);
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.proyecto:hover {
+    transform: scale(1.03);
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+}
+
+button {
+    background: var(--accent);
+    border: none;
+    padding: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .sobreMiGrid {
+        flex-direction: column;
+    }
+
+    .proyectosGrid {
+        grid-template-columns: 1fr;
+    }
+}
+.sobreMiFoto img {
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid var(--accent);
+}
